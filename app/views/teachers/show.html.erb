@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<div class ="container">
+  <div class = "main">
+    <h2>Teacher Name:<%= @teacher.name.upcase %></h2>
+    <div class = "row">
+      <div class = "col-md-6">
+        <h4>Dept Name</h4>
+        <div class="dis">
+            <% @teacher.depts.each_with_index do |dept | %>
+            <%= link_to dept.name, dept %>
+            <br>
+            <% end %>
+        </div>
+      </div>
+      <div class = "col-md-6">
+        <h4>Students Name</h4>
+        <div class="dis">
+          <% @teacher.depts.each_with_index do |dept,| %>
+          <% dept.studs.each_with_index do |stud, i | %>
+          <%= link_to stud.name, stud %>
+          <br>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+      <%= link_to 'Teacher', teachers_path,class:'btn' %>
+  </div>
+</div>

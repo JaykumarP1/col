@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class ="container">
+  <div class = "main">
+    <h1>Dept Name:<%= @dept.name %></h1>
+    <br>
+    <div class = "row">
+      <div class = "col-md-6">
+        <h4>Students Name</h4>
+        <div class="dis">
+          <% @dept.studs.each_with_index do |stud| %>
+             <%= link_to stud.name, stud %></td>
+           <br>
+          <% end %>
+        </div>
+      </div>
+      <div class = "col-md-6">
+        <h4>Teachers Name</h4>
+        <div class="dis">
+          <% @dept.teachers.each_with_index do |teach| %>
+             <%= link_to teach.name, teach %>
+          <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+     <%= link_to 'Department', depts_path ,class:'btn'%>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class = "main">
+    <h1>Studs</h1>
+    <div class = "dis">
+      <table>
+        <%= render partial: 'stud',collection: @studs %>
+      </table>
+    </div>
+    <br>
+    <%= link_to 'Add Student', new_stud_path, class: 'btn' %>
+  </div>
+</div>

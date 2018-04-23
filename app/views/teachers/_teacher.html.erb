@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to teacher.name, teacher %></td>
+  <td><%= link_to 'Edit', edit_teacher_path(teacher),class:'edit' %></td>
+  <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' },class:'del' %></td>
+</tr>

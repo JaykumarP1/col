@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class ="container">
+  <div class = "main">
+    <h2>Name: <%= @stud.name %></h2>
+    <h3><%= link_to @stud.dept.name, @stud.dept %></h3>
+    <h4>Teachers Name</h4>
+    <div class="dis">
+      <% @stud.dept.teachers.each_with_index do |teach| %>
+      <%= link_to teach.name, teach %></td>
+      <br>
+      <% end %>
+    </div>
+    <%= link_to 'Edit', edit_stud_path(@stud),class:'btn' %>
+    <%= link_to 'Students', studs_path,class:'btn' %>
+  </div>
+</div>
+

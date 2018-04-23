@@ -1,0 +1,25 @@
+<%= form_with(model: stud, local: true) do |form| %>
+  <% if stud.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stud.errors.count, "error") %> prohibited this stud from being saved:</h2>
+
+      <ul>
+      <% stud.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+<div class="field">
+    <%= form.label :Dept_id %>
+    <%= form.text_field :dept_id %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

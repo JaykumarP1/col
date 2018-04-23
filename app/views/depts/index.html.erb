@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class = "main">
+    <h1>Departments</h1>
+    <h4>Names</h4>
+    <div class = "dis">
+        <% @depts.each do |dept| %>
+          <p><%= link_to dept.name, dept %></p>
+        <% end %>
+      </div>
+      <br>
+    <%= link_to 'Add Dept', new_dept_path , class: 'btn btn-default' %>
+  </div>
+</div>
