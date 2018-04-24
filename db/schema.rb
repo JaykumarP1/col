@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_23_192002) do
+ActiveRecord::Schema.define(version: 2018_04_23_204627) do
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "readable_type"
+    t.integer "readable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["readable_type", "readable_id"], name: "index_books_on_readable_type_and_readable_id"
+  end
 
   create_table "depts", force: :cascade do |t|
     t.string "name"
